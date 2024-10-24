@@ -1,0 +1,69 @@
+:root {
+    --cor-de-fundo: #E0AE53;
+    --cor-da-letra: #E0D6C3;
+    --fonte: "Libre Baskerville", serif;
+    --fonte-weight-titulo: 700;
+    --fonte-weight-p: 400;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+}
+
+h1 {
+    font-family: var(--fonte);
+    font-weight: var(--fonte-weight-titulo);
+}
+
+p {
+    font-family: var(--fonte);
+    font-weight: var(--fonte-weight-p);
+}
+
+.first {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    padding: 0 10px 10px 10px;
+}
+
+.title {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.title>h1,
+p {
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+}
+
+.title>h1 {
+    font-size: 30px;
+}
+
+.title>p {
+    font-size: 20px;
+}
+
+
+.imagem {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    flex: 1;
+}
+
+.imagem>img {
+    width: 420px;
+}
