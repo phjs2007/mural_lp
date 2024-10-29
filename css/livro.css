@@ -1,0 +1,99 @@
+.sec_livro {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.title_livro {
+    display: inline-flex;
+    padding: 15px 31px 2px 11px;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 11px;
+    margin-top: 20px;
+}
+
+
+.linha {
+    height: 2px;
+    width: 100%;
+    background-color: black;
+}
+
+.conteiner_livro {
+    display: flex;
+    flex-direction: column;
+    width: 1310px;
+    height: 416px;
+    padding: 20px;
+}
+
+.linha_tempo {
+    display: inline-flex;
+    height: 24px;
+    padding: 1px 175px 0px 168px;
+    align-items: flex-start;
+    gap: 373px;
+    flex-shrink: 0;
+    border-bottom: 1px solid black;
+}
+
+.carrosel {
+    display: inline-flex;
+    padding: 2px 0px 0px 80px;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 220px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    background: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: all 3s ease;
+}
+
+.imgbox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: left center;
+    /* Ponto de origem ajustado */
+    transform: rotateY(0deg);
+    transition: transform 0.9s ease;
+}
+
+.imgbox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card:hover .imgbox {
+    transform: rotateY(-140deg);
+    /* Reduzi a rotação para evitar inversão completa */
+}
+
+.detalhes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.card:hover .detalhes {
+    opacity: 1;
+}
