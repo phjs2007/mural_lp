@@ -18,6 +18,7 @@ html {
 
 body {
     background-color: var(--cor-de-fundo);
+    width: 100vw;
 
 }
 
@@ -33,7 +34,7 @@ p {
 
 section {
     width: 100%;
-    height: 100vh;
+    height: auto;
 }
 
 .sec_home {
@@ -52,42 +53,59 @@ section {
 }
 
 .img_prin {
-    flex: 1;
     display: flex;
     justify-content: end;
     align-items: end;
+    width: auto;
 }
 
 .navbar {
     position: fixed;
-
     top: 0;
-
     width: 100%;
-
     background-color: transparent;
-
     color: white;
-
     display: flex;
-
     justify-content: space-around;
-
     padding: 2px 0;
-
     z-index: 1000;
-
 }
 
 .navbar a {
     color: white;
-
     text-decoration: none;
-
     padding: 10px 15px;
-
 }
 
 .navbar a:hover {
     background-color: #575757;
+}
+
+@media (max-width: 1070px) {
+    .img_prin>img {
+        width: 400px;
+    }
+}
+
+@media (max-width: 629px) {
+    .img_prin>img {
+        width: 300px;
+    }
+}
+
+@media (max-width: 520px) {
+    .img_prin>img {
+        width: 200px;
+    }
+}
+
+@media (max-width: 460px) {
+    .img_prin>img {
+        width: 150px;
+    }
+
+    .sec_home {
+        height: auto;
+        margin-bottom: 40px;
+    }
 }

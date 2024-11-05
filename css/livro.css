@@ -1,19 +1,16 @@
-.sec_livro {
+.sec-livro {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
+    padding: 20px;
 }
 
-.title_livro {
-    display: inline-flex;
-    padding: 15px 31px 2px 11px;
+.title-livro {
+    display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    gap: 10px;
     align-items: flex-start;
-    gap: 11px;
-    margin-top: 20px;
 }
-
 
 .linha {
     height: 2px;
@@ -21,52 +18,55 @@
     background-color: black;
 }
 
-.conteiner_livro {
+.container-livro {
     display: flex;
-    flex-direction: column;
-    width: 1310px;
-    height: 416px;
-    padding: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
-.linha_tempo {
-    display: inline-flex;
-    height: 24px;
-    padding: 1px 175px 0px 168px;
-    align-items: flex-start;
-    gap: 373px;
-    flex-shrink: 0;
-    border-bottom: 1px solid black;
-}
-
-.carrosel {
-    display: inline-flex;
-    padding: 2px 0px 0px 80px;
-    justify-content: flex-end;
-    align-items: flex-start;
-    gap: 220px;
-    margin-top: 20px;
-    position: relative;
+.carrossel {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 90px;
 }
 
 .card {
     position: relative;
     width: 200px;
-    height: 300px;
-    perspective: 1000px;
+    flex-shrink: 0;
     background: #fff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    transition: all 3s ease;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.ano {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border-radius: 5px;
 }
 
 .imgbox {
-    position: absolute;
     width: 100%;
-    height: 100%;
-    transform-origin: left center;
-    /* Ponto de origem ajustado */
-    transform: rotateY(0deg);
+    height: 300px;
+    overflow: hidden;
     transition: transform 0.9s ease;
 }
 
@@ -78,7 +78,6 @@
 
 .card:hover .imgbox {
     transform: rotateY(-140deg);
-    /* Reduzi a rotação para evitar inversão completa */
 }
 
 .detalhes {
@@ -88,7 +87,6 @@
     width: 100%;
     height: 100%;
     padding: 20px;
-    box-sizing: border-box;
     background-color: #fff;
     opacity: 0;
     transition: opacity 0.8s ease;
@@ -96,4 +94,47 @@
 
 .card:hover .detalhes {
     opacity: 1;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container-livro {
+        width: 100%;
+        padding: 0;
+    }
+
+    .carrossel {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 40%;
+    }
+
+    .imgbox img {
+        width: 100%;
+        height: 100%;
+
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .card {
+        width: 40%;
+    }
+
+
+}
+
+@media (max-width: 482px) {
+
+    .card {
+        width: 65%;
+        object-fit: cover;
+    }
+
+
 }
