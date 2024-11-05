@@ -1,7 +1,7 @@
 .sec_sobre {
     display: flex;
     width: 100%;
-    height: 100vh;
+    height: auto;
     flex-direction: row;
     /* Exibe em linha por padrão */
 }
